@@ -1,0 +1,2 @@
+#/bin/bash
+npm i -D "@rollup/plugin-commonjs" "@rollup/plugin-node-resolve" "@rollup/plugin-terser" "@rollup/plugin-typescript" "@testing-library/react" "@types/jest" "@types/node" "@types/react" "@types/react-dom" "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser" "eslint" "eslint-plugin-react" "eslint-plugin-react-hooks" "jest" "react" "react-dom" "rimraf" "rollup" "rollup-plugin-postcss" "ts-jest" "ts-loader" "typescript"
