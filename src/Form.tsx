@@ -15,7 +15,10 @@ interface FormProps {
     translateError?: (error: IValidationError) => string;
     children: ReactElement | ReactElement[];
 }
-export function Form({ fields, data, onSubmit, onChange, translateError, children, ...others }: FormProps) {
+export function Form({ fields, data, onSubmit, onChange, translateError, children, noValidate, ...others }: FormProps) {
+    if (noValidate == null) {
+        noValidate = true; // default is to not validate
+    }
     const [form] = useState(() => {
         const form = new FormController({ fields, data, onSubmit, translateError });
         onChange && form.watch(onChange);
@@ -28,8 +31,8 @@ export function Form({ fields, data, onSubmit, onChange, translateError, childre
     }
 
     return (
-        <FormContext.Provider value={form} >
-            <form {...others} onSubmit={handleSubmit}>
+        <FormContext.Provider value={form}>
+            <form {...others} onSubmit={handleSubmit} noValidate={noValidate}>
                 {children}
             </form>
         </FormContext.Provider>

@@ -1,7 +1,7 @@
 {
   "name": "@vintners/react-form",
   "license": "MIT",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "private": false,
   "description": "Reusable, boilerplate free and auto validating react forms with chakra-ui and react-select built-in support",
   "author": "Bogdan Stefanescu",
