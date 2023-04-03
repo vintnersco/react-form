@@ -1,5 +1,5 @@
 import { DataType } from "../DataType";
-import { InvalidMinDateError, InvalidMaxDateError, TypeCastError } from "../error";
+import { InvalidMaxDateError, InvalidMinDateError, TypeCastError } from "../error";
 
 export class DateType extends DataType<Date> {
     cast(value: any) {

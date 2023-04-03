@@ -1,5 +1,4 @@
-import { isInt16Array } from "util/types";
-import { DataType, Nullable } from "../DataType";
+import { DataType } from "../DataType";
 import { TypeCastError } from "../error";
 
 export class BooleanType extends DataType<boolean> {

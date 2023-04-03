@@ -1,5 +1,3 @@
-import { ArrayType } from "./ArrayType";
-
 export * from './ArrayType';
 export * from './ObjectType';
 export * from './StringType';

@@ -1,5 +1,5 @@
 import { DataType, Nullable } from "../DataType";
-import { InvalidLengthError, InvalidMaxLengthError, InvalidMinLengthError, InvalidPatternError, TypeCastError, InvalidEmailError, InvalidUUIDError, InvalidUrlError, WeakPasswordError } from "../error";
+import { InvalidEmailError, InvalidLengthError, InvalidMaxLengthError, InvalidMinLengthError, InvalidPatternError, InvalidUrlError, InvalidUUIDError, TypeCastError, WeakPasswordError } from "../error";
 
 //see https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
 const emailRx = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;

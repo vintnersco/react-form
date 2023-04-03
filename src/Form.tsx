@@ -1,6 +1,6 @@
-import React, { createContext, FormEvent, ReactElement, useContext, useEffect, useState } from "react"
-import { IValidationError } from "./error";
+import { createContext, FormEvent, ReactElement, useContext, useEffect, useState } from "react";
 import { FormController, FormWatcher, IFieldDescriptor } from "./controller/FormController";
+import { IValidationError } from "./error";
 
 const FormContext = createContext<FormController | null>(null);
 

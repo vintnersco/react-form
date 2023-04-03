@@ -1,4 +1,4 @@
-import { EmptyValueError, NullValueError, IValidationError, ValidationError } from "./error";
+import { EmptyValueError, IValidationError, NullValueError, ValidationError } from "./error";
 
 
 export type Nullable<Type> = Type | null;
