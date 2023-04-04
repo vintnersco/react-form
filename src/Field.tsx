@@ -15,8 +15,9 @@ interface FieldProps {
     help?: string | ReactElement;
     placeholder?: string;
     autoComplete?: string;
+    options?: IOption[] | (() => Promise<IOption[]>);
 }
-export function Field({ name, visibility, isRequired, component, ...others }: FieldProps) {
+export function Field({ name, visibility, isRequired, component, options, ...others }: FieldProps) {
     const field = useFieldAndWatch(name);
     const controller = field.controller;
 
@@ -24,7 +25,7 @@ export function Field({ name, visibility, isRequired, component, ...others }: Fi
         return null;
     }
 
-    const options = field.options;
+    if (!options) options = field.options; // fallback on field descriptor options
     const label = others.label || field.label;
     const help = others.help || field.help;
     const placeholder = others.placeholder || field.placeholder;
@@ -57,7 +58,7 @@ export function Field({ name, visibility, isRequired, component, ...others }: Fi
         });
     }
 }
-interface FieldWithAsyncOptionsProps extends Omit<FieldProps, 'visibility'> {
+interface FieldWithAsyncOptionsProps extends Omit<FieldProps, 'visibility' | 'options'> {
     controller: FieldController;
     loadOptions: () => Promise<IOption[]>
 }

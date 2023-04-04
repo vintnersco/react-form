@@ -6,7 +6,7 @@ const FormContext = createContext<FormController | null>(null);
 
 interface FormProps {
     fields: Record<string, IFieldDescriptor>;
-    onSubmit: (form: FormController) => void;
+    onSubmit: (data: Record<string, any>, form: FormController) => void;
     data?: Record<string, any>;
     id?: string;
     noValidate?: boolean;

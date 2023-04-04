@@ -1,4 +1,3 @@
-import { throws } from "assert";
 import { SyntheticEvent } from "react";
 import { DataType, DataValue, Nullable, ValidationResult } from "../DataType";
 import { EmptyValueError } from "../error";

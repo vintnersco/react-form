@@ -41,7 +41,7 @@ export interface FieldComponentProps {
 export type IFormFields = Record<string, IFieldDescriptor>
 
 export interface IOption {
-    value: string, label: string
+    value: any, label: string
 }
 
 export interface IFieldDescriptor<T = any> {
@@ -77,7 +77,7 @@ export interface IField<T = any> {
 
 interface FormControllerProps {
     fields: Record<string, IFieldDescriptor>;
-    onSubmit: (form: FormController) => any;
+    onSubmit: (data: Record<string, any>, form: FormController) => any;
     data?: Record<string, any>;
     validateOn?: 'blur' | 'change' | 'submit';
     translateError?: (error: IValidationError) => string;
@@ -86,7 +86,7 @@ export class FormController {
 
     watchers: FormWatcher[] = [];
     fields: Record<string, IField> = {};
-    onSubmit: (form: FormController) => any;
+    onSubmit: (data: Record<string, any>, form: FormController) => any;
     isSubmitting = false;
     translateError: (error: IValidationError) => string;
 
@@ -183,7 +183,7 @@ export class FormController {
         if (this.validate()) {
             this.isSubmitting = true;
             this._fireSubmitEvent(FormChangeStatus.submitting);
-            const result = this.onSubmit(this);
+            const result = this.onSubmit(this.data, this);
             if (result instanceof Promise) {
                 result.then(() => {
                     this.isSubmitting = false;

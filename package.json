@@ -1,7 +1,7 @@
 {
   "name": "@vintners/react-form",
   "license": "MIT",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "private": false,
   "description": "Reusable, boilerplate free and auto validating react forms with chakra-ui and react-select built-in support",
   "author": "Bogdan Stefanescu",
@@ -26,8 +26,8 @@
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "peerDependencies": {
-    "react": "^18.0.0 || ^17.0.0",
-    "react-dom": "^18.0.0 || ^17.0.0"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.1",

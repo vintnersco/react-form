@@ -1,6 +1,6 @@
 
 import typescript from '@rollup/plugin-typescript';
-import terser from '@rollup/plugin-terser';
+//import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
@@ -47,10 +47,10 @@ export default {
                 declaration: true,
             },
         }),
-        terser({
-            output: {
-                comments: false,
-            },
-        }),
+        // terser({
+        //     output: {
+        //         comments: false,
+        //     },
+        // }),
     ],
 };
